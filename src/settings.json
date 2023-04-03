@@ -476,6 +476,88 @@
                     "arguments": ["atmosphere/contents/010000000000bd00/flags/boot2.flag"]
                 }
             ]
+        },
+
+        "browsenx": {
+            "repo": "crc-32/BrowseNX",
+            "regex": ["BrowseNX\\.zip"],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": ["BrowseNX.zip"]
+                }
+            ]
+        },
+        "fizeau": {
+            "repo": "averne/Fizeau",
+            "regex": ["Fizeau-\\d.*\\.zip"],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": ["Fizeau-\\d.*\\.zip"]
+                }
+            ]
+        },
+        "quickntp": {
+            "repo": "nedex/QuickNTP",
+            "regex": [".*QuickNTP\\.ovl"],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/.overlays"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "QuickNTP.ovl",
+                        "switch/.overlays/QuickNTP.ovl"
+                    ]
+                }
+            ]
+        },
+        "pplay": {
+            "repo": "Cpasjuste/pplay",
+            "regex": ["pplay-.*_switch\\.zip"],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": ["pplay-.*_switch\\.zip"]
+                },
+                {
+                    "name": "create_dir",
+                    "arguments": ["switch"]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "pplay",
+                        "switch/pplay"
+                    ]
+                }
+            ]
+        },
+        "moonlight": {
+            "repo": "rock88/moonlight-nx",
+            "regex": ["moonlight\\.zip"],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": ["moonlight\\.zip"]
+                },
+                {
+                    "name": "create_dir",
+                    "arguments": ["switch/moonlight"]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "moonlight.nro",
+                        "switch/moonlight/moonlight.nro"
+                    ]
+                }
+            ]
         }
     }
 }
