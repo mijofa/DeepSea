@@ -1,4 +1,4 @@
-import shutil, os, logging, re, zipfile, glob
+import shutil, os, logging, re, zipfile, glob, urllib.request
 from pathlib import Path
 
 class FS():
@@ -16,7 +16,8 @@ class FS():
     def createModuleEnv(self, module):
         shutil.rmtree("./menv", ignore_errors=True)
         Path("./menv").mkdir(parents=True, exist_ok=True)
-        shutil.copytree(f"./base/{module['repo']}", f"./menv/", dirs_exist_ok=True)
+        if Path(f"./base/{module['repo']}").exists():
+            shutil.copytree(f"./base/{module['repo']}", f"./menv/", dirs_exist_ok=True)
 
     def finishModule(self):
         self.__copyToSD()
@@ -44,7 +45,13 @@ class FS():
         if step["name"] == "move":
             self.__copy(step["arguments"][0], step["arguments"][1])
             self.__delete(step["arguments"][0])
-        
+
+        # FIXME: This belongs at a higher level since it largely replaces the github downloader for the given module
+        # FIXME: Would probably make more sense to just name this "urlretrieve" like the function it uses.
+        #        That just doesn't really match the grammar used for other actions.
+        if step["name"] == "retrieve_url":
+            logging.info(f"[{module['repo']}] Downloading: {step['arguments'][1]}")
+            urllib.request.urlretrieve(step["arguments"][0], f"./menv/{step['arguments'][1]}")
 
 
     def __extract(self, source):
