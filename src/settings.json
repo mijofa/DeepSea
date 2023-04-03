@@ -3,7 +3,7 @@
     "packages": [
         {
             "name": "minimal",
-            "active": true,
+            "active": false,
             "modules": [
                 "atmosphere",
                 "hekate",
@@ -12,7 +12,7 @@
             ]
         },
         {
-            "name": "normal",
+            "name": "mijofa",
             "active": true,
             "modules": [
                 "atmosphere",
@@ -26,6 +26,44 @@
                 "emuiibo",
                 "jksv",
                 "goldleaf",
+                "ldn_mitm",
+                "sysclk",
+                "syscon",
+                "sysftpdlight",
+                "nxovlloader",
+                "ovlsysmodules",
+                "statusmonitoroverlay",
+                "deepseacpr",
+                "tegraexplorer",
+                "nxshell",
+                "teslamenu",
+                "missioncontrol",
+
+                "localdiroverlay",
+                "browsenx",
+                "fizeau",
+                "sigpatches",
+                "quickntp",
+                "pplay",
+                "moonlight"
+            ]
+        },
+        {
+            "name": "normal",
+            "active": false,
+            "modules": [
+                "atmosphere",
+                "hekate",
+                "deepseaassets",
+                "hbappstore",
+                "deepseatoolbox",
+                "aioupdater",
+                "edizon",
+                "edizon-ovl",
+                "emuiibo",
+                "jksv",
+                "nxmtp",
+                "tinwoo",
                 "sysftpdlight",
                 "nxovlloader",
                 "ovlsysmodules",
@@ -35,7 +73,7 @@
         },
         {
             "name": "advanced",
-            "active": true,
+            "active": false,
             "modules": [
                 "atmosphere",
                 "hekate",
@@ -478,6 +516,25 @@
             ]
         },
 
+        "localdiroverlay": {
+            "repo": "mijofa/DeepSea",
+            "regex": [],
+            "steps": [
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "copy",
+                    "arguments": [
+                        "../../overlay/",
+                        ""
+                    ]
+                }
+            ]
+        },
         "browsenx": {
             "repo": "crc-32/BrowseNX",
             "regex": ["BrowseNX\\.zip"],
@@ -495,6 +552,22 @@
                 {
                     "name": "extract",
                     "arguments": ["Fizeau-\\d.*\\.zip"]
+                }
+            ]
+        },
+        "sigpatches": {
+            "repo": "ITotalJustice/patches",
+            "steps": [
+                {
+                    "name": "retrieve_url",
+                    "arguments": [
+                        "https://sigmapatches.coomer.party/sigpatches.zip",
+                        "sigpatches.zip"
+                    ]
+                },
+                {
+                    "name": "extract",
+                    "arguments": ["sigpatches.zip"]
                 }
             ]
         },
