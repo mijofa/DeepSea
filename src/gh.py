@@ -23,7 +23,7 @@ class GH():
             return
         ghLatestRelease = releases[0]
 
-        for pattern in module["regex"]:
+        for pattern in module.get("regex", []):
             for asset in ghLatestRelease.get_assets():
                 if re.search(pattern, asset.name):
                     logging.info(f"[{module['repo']}] Downloading: {asset.name}")
