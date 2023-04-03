@@ -66,7 +66,8 @@
         "atmosphere": {
             "repo": "Atmosphere-NX/Atmosphere",
             "regex": [
-                ".*atmosphere.*\\.zip"
+                ".*atmosphere.*\\.zip",
+                "fusee\\.bin"
             ],
             "steps": [
                 {
@@ -100,6 +101,20 @@
                         "atmosphere/config/system_settings.ini",
                         "; dmnt_cheats_enabled_by_default = u8!0x1",
                         "dmnt_cheats_enabled_by_default = u8!0x0"
+                    ]
+                },
+
+                {
+                    "name": "create_dir",
+                    "arguments": [
+                        "bootloader/payloads/"
+                    ]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "fusee.bin",
+                        "bootloader/payloads/fusee.bin"
                     ]
                 }
             ]
