@@ -648,6 +648,31 @@
                     "arguments": ["RetroArch.7z"]
                 }
             ]
+        },
+        "ulaunch": {
+            "repo": "XorTroll/uLaunch",
+            "regex": ["uLaunch-.*\\.zip", "SdOut\\.zip"],
+            "steps": [
+                {
+                    "name": "extract",
+                    "arguments": ["uLaunch-.*\\.zip"]
+                },
+                {
+                    "name": "extract",
+                    "arguments": ["SdOut\\.zip"]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "SdOut/.",
+                        "."
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "arguments": ["SdOut/"]
+                }
+            ]
         }
     }
 }
