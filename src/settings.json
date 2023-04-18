@@ -39,7 +39,6 @@
                 "teslamenu",
                 "missioncontrol",
 
-                "localdiroverlay",
                 "browsenx",
                 "fizeau",
                 "sigpatches",
@@ -517,25 +516,6 @@
             ]
         },
 
-        "localdiroverlay": {
-            "repo": "mijofa/DeepSea",
-            "regex": [],
-            "steps": [
-                {
-                    "name": "create_dir",
-                    "arguments": [
-                        ""
-                    ]
-                },
-                {
-                    "name": "copy",
-                    "arguments": [
-                        "../../overlay/",
-                        ""
-                    ]
-                }
-            ]
-        },
         "browsenx": {
             "repo": "crc-32/BrowseNX",
             "regex": ["BrowseNX\\.zip"],
