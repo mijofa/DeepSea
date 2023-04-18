@@ -45,7 +45,8 @@
                 "sigpatches",
                 "quickntp",
                 "pplay",
-                "moonlight"
+                "moonlight",
+                "retroarch"
             ]
         },
         {
@@ -629,6 +630,22 @@
                         "moonlight.nro",
                         "switch/moonlight/moonlight.nro"
                     ]
+                }
+            ]
+        },
+        "retroarch": {
+            "repo": "libretro/RetroArch",
+            "steps": [
+                {
+                    "name": "retrieve_url",
+                    "arguments": [
+                        "https://buildbot.libretro.com/stable/1.15.0/nintendo/switch/libnx/RetroArch.7z",
+                        "RetroArch.7z"
+                    ]
+                },
+                {
+                    "name": "extract7z",
+                    "arguments": ["RetroArch.7z"]
                 }
             ]
         }

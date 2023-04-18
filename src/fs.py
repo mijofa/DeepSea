@@ -1,5 +1,6 @@
 import shutil, os, logging, re, zipfile, glob, urllib.request
 from pathlib import Path
+import py7zr
 
 class FS():
     def __init__(self):
@@ -26,6 +27,8 @@ class FS():
     def executeStep(self, module, step):
         if step["name"] == "extract":
             self.__extract(step["arguments"][0])
+        if step["name"] == "extract7z":
+            self.__extract7z(step["arguments"][0])
         
         if step["name"] == "create_dir":
             self.__createDir(step["arguments"][0])
@@ -53,6 +56,15 @@ class FS():
             logging.info(f"[{module['repo']}] Downloading: {step['arguments'][1]}")
             urllib.request.urlretrieve(step["arguments"][0], f"./menv/{step['arguments'][1]}")
 
+
+    def __extract7z(self, source):
+        path = Path("./menv/")
+        # NOTE: The reason for this loop is so that 'source' can be a regex
+        for filepath in Path("./menv/").iterdir():
+            if re.search(source, filepath.name):
+                with py7zr.SevenZipFile(filepath, mode='r') as zip_ref:
+                    zip_ref.extractall(path)
+                filepath.unlink()
 
     def __extract(self, source):
         path = f"./menv/"
