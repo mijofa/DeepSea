@@ -45,6 +45,7 @@
                 "quickntp",
                 "pplay",
                 "moonlight",
+                "switchfin",
                 "retroarch"
             ]
         },
@@ -609,6 +610,19 @@
                     "arguments": [
                         "moonlight.nro",
                         "switch/moonlight/moonlight.nro"
+                    ]
+                }
+            ]
+        },
+        "switchfin": {
+            "repo": "dragonflylee/switchfin",
+            "regex": ["Switchfin\\.nro"],
+            "steps": [
+                {
+                    "name": "move",
+                    "arguments": [
+                        "Switchfin.nro",
+                        "switch/Switchfin/Switchfin.nro"
                     ]
                 }
             ]
