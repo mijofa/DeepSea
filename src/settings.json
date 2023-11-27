@@ -46,6 +46,7 @@
                 "pplay",
                 "moonlight",
                 "switchfin",
+                "amiigo",
                 "retroarch"
             ]
         },
@@ -623,6 +624,19 @@
                     "arguments": [
                         "Switchfin.nro",
                         "switch/Switchfin/Switchfin.nro"
+                    ]
+                }
+            ]
+        },
+        "amiigo": {
+            "repo": "CompSciOrBust/Amiigo",
+            "regex": ["Amiigo\\.nro"],
+            "steps": [
+                {
+                    "name": "move",
+                    "arguments": [
+                        "Amiigo.nro",
+                        "switch/Amiigo/Amiigo.nro"
                     ]
                 }
             ]
