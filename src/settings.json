@@ -599,10 +599,16 @@
             "regex": ["Moonlight-Switch\\.nro"],
             "steps": [
                 {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/Moonlight-Switch"
+                    ]
+                },
+                {
                     "name": "move",
                     "arguments": [
                         "Moonlight-Switch.nro",
-                        "switch/Moonlight-Switch,nro"
+                        "switch/Moonlight-Switch/Moonlight-Switch,nro"
                     ]
                 }
             ]
