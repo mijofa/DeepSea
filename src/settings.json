@@ -633,6 +633,12 @@
             "regex": ["Amiigo\\.nro"],
             "steps": [
                 {
+                    "name": "create_dir",
+                    "arguments": [
+                        "switch/Amiigo"
+                    ]
+                },
+                {
                     "name": "move",
                     "arguments": [
                         "Amiigo.nro",
