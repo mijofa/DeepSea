@@ -595,22 +595,14 @@
             ]
         },
         "moonlight": {
-            "repo": "rock88/moonlight-nx",
-            "regex": ["moonlight\\.zip"],
+            "repo": "XITRIX/Moonlight-Switch",
+            "regex": ["Moonlight-Switch\\.nro"],
             "steps": [
-                {
-                    "name": "extract",
-                    "arguments": ["moonlight\\.zip"]
-                },
-                {
-                    "name": "create_dir",
-                    "arguments": ["switch/moonlight"]
-                },
                 {
                     "name": "move",
                     "arguments": [
-                        "moonlight.nro",
-                        "switch/moonlight/moonlight.nro"
+                        "Moonlight-Switch.nro",
+                        "switch/Moonlight-Switch,nro"
                     ]
                 }
             ]
