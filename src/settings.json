@@ -608,7 +608,7 @@
                     "name": "move",
                     "arguments": [
                         "Moonlight-Switch.nro",
-                        "switch/Moonlight-Switch/Moonlight-Switch,nro"
+                        "switch/Moonlight-Switch/Moonlight-Switch.nro"
                     ]
                 }
             ]
