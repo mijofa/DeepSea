@@ -42,6 +42,7 @@
                 "browsenx",
                 "fizeau",
                 "sigpatches",
+                "jackbox-online-patch",
                 "quickntp",
                 "pplay",
                 "moonlight",
@@ -551,6 +552,35 @@
                 {
                     "name": "extract",
                     "arguments": ["sigpatches.zip"]
+                }
+            ]
+        },
+        "jackbox-online-patch": {
+            "repo": "SomeOrdinarySanya/jackbox-online-patch",
+            "steps": [
+                {
+                    "name": "retrieve_url",
+                    "arguments": [
+                        "https://github.com/SomeOrdinarySanya/jackbox-online-patch/archive/refs/heads/main.zip",
+                        "jackbox-online-patch.zip"
+                    ]
+                },
+                {
+                    "name": "extract",
+                    "arguments": ["jackbox-online-patch.zip"]
+                },
+                {
+                    "name": "move",
+                    "arguments": [
+                        "jackbox-online-patch-main/contents",
+                        "atmosphere/contents"
+                    ]
+                },
+                {
+                    "name": "delete",
+                    "arguments": [
+                        "jackbox-online-patch-main"
+                    ]
                 }
             ]
         },
